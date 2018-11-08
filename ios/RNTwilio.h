@@ -4,8 +4,10 @@
 #else
 #import <React/RCTBridgeModule.h>
 #endif
+#import <TwilioVoice/TwilioVoice.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface RNTwilio : NSObject <RCTBridgeModule>
+@interface RNTwilio : NSObject <RCTBridgeModule, TVOCallDelegate, TVONotificationDelegate, AVAudioPlayerDelegate>
 
 @end
   

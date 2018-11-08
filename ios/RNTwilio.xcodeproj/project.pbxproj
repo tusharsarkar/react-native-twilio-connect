@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24926F4521941041000D4FB8 /* TwilioVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24926F4421941041000D4FB8 /* TwilioVoice.framework */; };
 		B3E7B58A1CC2AC0600A0062D /* RNTwilio.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNTwilio.m */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,23 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNTwilio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNTwilio.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		24843CE82194967800B33438 /* disconnect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = disconnect.wav; sourceTree = "<group>"; };
+		24843CE92194967800B33438 /* dtmf_0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dtmf_0.wav; sourceTree = "<group>"; };
+		24843CEA2194967800B33438 /* dtmf_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dtmf_1.wav; sourceTree = "<group>"; };
+		24843CEB2194967800B33438 /* dtmf_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dtmf_2.wav; sourceTree = "<group>"; };
+		24843CEC2194967800B33438 /* dtmf_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dtmf_3.wav; sourceTree = "<group>"; };
+		24843CED2194967800B33438 /* dtmf_4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dtmf_4.wav; sourceTree = "<group>"; };
+		24843CEE2194967800B33438 /* dtmf_5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dtmf_5.wav; sourceTree = "<group>"; };
+		24843CEF2194967800B33438 /* dtmf_6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dtmf_6.wav; sourceTree = "<group>"; };
+		24843CF02194967800B33438 /* dtmf_7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dtmf_7.wav; sourceTree = "<group>"; };
+		24843CF12194967800B33438 /* dtmf_8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dtmf_8.wav; sourceTree = "<group>"; };
+		24843CF22194967800B33438 /* dtmf_9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dtmf_9.wav; sourceTree = "<group>"; };
+		24843CF32194967800B33438 /* dtmf_hash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dtmf_hash.wav; sourceTree = "<group>"; };
+		24843CF42194967800B33438 /* dtmf_star.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dtmf_star.wav; sourceTree = "<group>"; };
+		24843CF52194967800B33438 /* incoming.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incoming.wav; sourceTree = "<group>"; };
+		24843CF62194967800B33438 /* outgoing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = outgoing.wav; sourceTree = "<group>"; };
+		24843CFA2194998600B33438 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		24926F4421941041000D4FB8 /* TwilioVoice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwilioVoice.framework; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNTwilio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNTwilio.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNTwilio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNTwilio.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24926F4521941041000D4FB8 /* TwilioVoice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,9 +66,42 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		24843CE72194967800B33438 /* SoundFiles */ = {
+			isa = PBXGroup;
+			children = (
+				24843CE82194967800B33438 /* disconnect.wav */,
+				24843CE92194967800B33438 /* dtmf_0.wav */,
+				24843CEA2194967800B33438 /* dtmf_1.wav */,
+				24843CEB2194967800B33438 /* dtmf_2.wav */,
+				24843CEC2194967800B33438 /* dtmf_3.wav */,
+				24843CED2194967800B33438 /* dtmf_4.wav */,
+				24843CEE2194967800B33438 /* dtmf_5.wav */,
+				24843CEF2194967800B33438 /* dtmf_6.wav */,
+				24843CF02194967800B33438 /* dtmf_7.wav */,
+				24843CF12194967800B33438 /* dtmf_8.wav */,
+				24843CF22194967800B33438 /* dtmf_9.wav */,
+				24843CF32194967800B33438 /* dtmf_hash.wav */,
+				24843CF42194967800B33438 /* dtmf_star.wav */,
+				24843CF52194967800B33438 /* incoming.wav */,
+				24843CF62194967800B33438 /* outgoing.wav */,
+			);
+			path = SoundFiles;
+			sourceTree = "<group>";
+		};
+		24926F4321941041000D4FB8 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				24926F4421941041000D4FB8 /* TwilioVoice.framework */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				24843CE72194967800B33438 /* SoundFiles */,
+				24926F4321941041000D4FB8 /* Libs */,
+				24843CFA2194998600B33438 /* Constant.h */,
 				B3E7B5881CC2AC0600A0062D /* RNTwilio.h */,
 				B3E7B5891CC2AC0600A0062D /* RNTwilio.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
@@ -203,11 +255,17 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+					"\"$(SRCROOT)/Libs/TwilioVoice.framework\"",
+				);
 				HEADER_SEARCH_PATHS = (
-				"$(inherited)",
+					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
+					/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/,
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
@@ -219,11 +277,17 @@
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libs",
+					"\"$(SRCROOT)/Libs/TwilioVoice.framework\"",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
+					/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/,
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
