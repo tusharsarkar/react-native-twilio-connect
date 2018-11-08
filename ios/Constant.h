@@ -12,7 +12,16 @@
 
 #endif /* Constant_h */
 
-#define kCallSuccessfullyRegistered @"CallSuccessfullyRegistered";
-#define kCallSuccessfullyUnRegistered @"kCallSuccessfullyUnRegistered";
-#define kCallStarted @"CallStarted";
-#define kCallDisconnected @"CallDisconnected";
+#define kCallSuccessfullyRegistered @"CallSuccessfullyRegistered"
+#define kCallSuccessfullyUnRegistered @"kCallSuccessfullyUnRegistered"
+#define kCallConnected @"CallConnected"
+#define kCallDisconnected @"CallDisconnected"
+#define kCallFailedToConnectOnNetworkError @"CallFailedToConnectOnNetworkError"
+#define kCallFailedOnNetworkError @"CallFailedOnNetworkError"
+#define kCallInviteReceived @"CallInviteReceived"
+#define kCallInviteCancelled @"CallInviteCancelled"
+#define kCallStatePending @"pending"
+#define kCallStateAccepted @"accepted"
+#define kCallStateRejected @"rejected"
+#define kCallStateCancelled @"cancelled"
+

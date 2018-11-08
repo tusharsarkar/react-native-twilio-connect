@@ -6,8 +6,10 @@
 #endif
 #import <TwilioVoice/TwilioVoice.h>
 #import <AVFoundation/AVFoundation.h>
+#import <PushKit/PushKit.h>
+#import <React/RCTEventEmitter.h>
 
-@interface RNTwilio : NSObject <RCTBridgeModule, TVOCallDelegate, TVONotificationDelegate, AVAudioPlayerDelegate>
+@interface RNTwilio : RCTEventEmitter <RCTBridgeModule, TVOCallDelegate, TVONotificationDelegate, AVAudioPlayerDelegate, PKPushRegistryDelegate>
 
 @end
   
