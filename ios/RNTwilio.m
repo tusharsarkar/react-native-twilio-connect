@@ -1,6 +1,7 @@
 
 #import "RNTwilio.h"
 #import "Constant.h"
+#import <React/RCTBridgeModule.h>
 
 
 @interface RNTwilio()
@@ -20,6 +21,7 @@ typedef void (^RingtonePlaybackCallback)(void);
     NSString* _accessToken;
     PKPushRegistry* _voipRegistry;
 }
+
 @synthesize bridge = _bridge;
 
 - (dispatch_queue_t)methodQueue
@@ -27,14 +29,21 @@ typedef void (^RingtonePlaybackCallback)(void);
     return dispatch_get_main_queue();
 }
 
-RCT_EXPORT_MODULE()
+RCT_EXPORT_MODULE(@"TwilioConnect")
+
+- (NSArray<NSString *> *)supportedEvents
+{
+    return @[kCallSuccessfullyRegistered,kCallSuccessfullyUnRegistered,kCallConnected,kCallDisconnected,kCallFailedToConnectOnNetworkError,kCallFailedOnNetworkError,kCallInviteReceived,kCallInviteCancelled,kCallStateAccepted,kCallStateRejected,kCallStateCancelled];
+}
 
 #pragma mark - RegisterCall & Configuration
 
 RCT_EXPORT_METHOD(registerWithAccessToken:(nonnull NSString *)accessToken pushToken:(nonnull NSString *)pushDeviceToken){
     [TwilioVoice registerWithAccessToken:accessToken deviceToken:pushDeviceToken completion:^(NSError * _Nullable error) {
-        [self sendEventWithName:kCallSuccessfullyRegistered body:nil];
-        [self registerPushRegistory];
+        if (error == nil){
+            [self sendEventWithName:kCallSuccessfullyRegistered body:nil];
+            [self registerPushRegistory];
+        }
     }];
 }
 
