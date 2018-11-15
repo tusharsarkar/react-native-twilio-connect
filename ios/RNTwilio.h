@@ -7,5 +7,7 @@
 
 @interface RNTwilio : RCTEventEmitter <RCTBridgeModule, TVOCallDelegate, TVONotificationDelegate, AVAudioPlayerDelegate, PKPushRegistryDelegate>
 
++ (void)rnPushRegistry:(NSString *)pushToken;
+
 @end
   

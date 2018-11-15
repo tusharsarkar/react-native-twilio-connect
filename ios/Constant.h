@@ -13,7 +13,7 @@
 #endif /* Constant_h */
 
 #define kCallSuccessfullyRegistered @"CallSuccessfullyRegistered"
-#define kCallSuccessfullyUnRegistered @"kCallSuccessfullyUnRegistered"
+#define kCallSuccessfullyUnRegistered @"CallSuccessfullyUnRegistered"
 #define kCallConnected @"CallConnected"
 #define kCallDisconnected @"CallDisconnected"
 #define kCallFailedToConnectOnNetworkError @"CallFailedToConnectOnNetworkError"
@@ -24,4 +24,4 @@
 #define kCallStateAccepted @"accepted"
 #define kCallStateRejected @"rejected"
 #define kCallStateCancelled @"cancelled"
-
+#define kRnPushToken @"RnPushToken"

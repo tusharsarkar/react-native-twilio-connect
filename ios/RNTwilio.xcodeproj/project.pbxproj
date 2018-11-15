@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		24926F4521941041000D4FB8 /* TwilioVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24926F4421941041000D4FB8 /* TwilioVoice.framework */; };
+		24963C31219CAD470074252A /* RNTwilio.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3E7B5881CC2AC0600A0062D /* RNTwilio.h */; };
+		24963C59219CAFC90074252A /* Constant.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24843CFA2194998600B33438 /* Constant.h */; };
 		B3E7B58A1CC2AC0600A0062D /* RNTwilio.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNTwilio.m */; };
 /* End PBXBuildFile section */
 
@@ -18,6 +20,8 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				24963C59219CAFC90074252A /* Constant.h in CopyFiles */,
+				24963C31219CAD470074252A /* RNTwilio.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +259,7 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libs",
@@ -277,6 +282,7 @@
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libs",

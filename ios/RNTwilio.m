@@ -24,6 +24,11 @@ typedef void (^RingtonePlaybackCallback)(void);
 
 @synthesize bridge = _bridge;
 
++ (void)rnPushRegistry:(NSString *)pushToken{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePushRegistryNotification:) name:@"PUSH" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PUSH" object:pushToken];
+}
+
 - (dispatch_queue_t)methodQueue
 {
     return dispatch_get_main_queue();
@@ -31,9 +36,13 @@ typedef void (^RingtonePlaybackCallback)(void);
 
 RCT_EXPORT_MODULE(@"TwilioConnect")
 
+- (void)handlePushRegistryNotification:(NSNotification *)notification {
+    [self sendEventWithName:kRnPushToken body:notification.userInfo[@"data"]];
+}
+
 - (NSArray<NSString *> *)supportedEvents
 {
-    return @[kCallSuccessfullyRegistered,kCallSuccessfullyUnRegistered,kCallConnected,kCallDisconnected,kCallFailedToConnectOnNetworkError,kCallFailedOnNetworkError,kCallInviteReceived,kCallInviteCancelled,kCallStateAccepted,kCallStateRejected,kCallStateCancelled];
+    return @[kCallSuccessfullyRegistered,kCallSuccessfullyUnRegistered,kCallConnected,kCallDisconnected,kCallFailedToConnectOnNetworkError,kCallFailedOnNetworkError,kCallInviteReceived,kCallInviteCancelled,kCallStateAccepted,kCallStateRejected,kCallStateCancelled,kRnPushToken];
 }
 
 #pragma mark - RegisterCall & Configuration
@@ -49,6 +58,7 @@ RCT_EXPORT_METHOD(registerWithAccessToken:(nonnull NSString *)accessToken pushTo
 
 RCT_EXPORT_METHOD(unregisterWithAccessToken:(nonnull NSString *)accessToken pushToken:(nonnull NSString *)pushDeviceToken){
     [TwilioVoice unregisterWithAccessToken:accessToken deviceToken:pushDeviceToken completion:^(NSError * _Nullable error) {
+        [self sendEventWithName:kCallSuccessfullyUnRegistered body:nil];
         [self unregisterPushRegistory];
     }];
 }
