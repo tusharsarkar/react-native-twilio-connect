@@ -34,7 +34,7 @@ typedef void (^RingtonePlaybackCallback)(void);
     return dispatch_get_main_queue();
 }
 
-RCT_EXPORT_MODULE(@"TwilioConnect")
+RCT_EXPORT_MODULE()
 
 - (void)handlePushRegistryNotification:(NSNotification *)notification {
     [self sendEventWithName:kRnPushToken body:notification.userInfo[@"data"]];
@@ -69,13 +69,13 @@ RCT_EXPORT_METHOD(handleNotification:(nonnull NSDictionary *)payload){
 
 #pragma mark - Making Outgoing Calls
 
-RCT_EXPORT_METHOD(call:(nonnull NSString *)accessToken params:(nullable NSDictionary<NSString *,NSString *> *)callParams){
-    _call = [TwilioVoice call:accessToken params:callParams delegate:self];
+RCT_EXPORT_METHOD(call:(nonnull NSString *)accessToken params:(NSDictionary *)callParams){
+    _call = [TwilioVoice call:accessToken params:callParams uuid:[NSUUID UUID] delegate:self];
 }
 
 #pragma mark - CallKitIntegration Methods
 
-RCT_EXPORT_METHOD(call:(nonnull NSString *)accessToken params:(nullable NSDictionary<NSString *,NSString *> *)callParams uuid:(nonnull NSString *)uuidString){
+RCT_EXPORT_METHOD(callWithUDID:(nonnull NSString *)accessToken params:(NSDictionary *)callParams uuid:(nonnull NSString *)uuidString){
     NSUUID *uuidObj = [[NSUUID alloc] initWithUUIDString:uuidString];
     _call = [TwilioVoice call:accessToken params:callParams uuid:uuidObj delegate:self];
 }
@@ -132,7 +132,7 @@ RCT_EXPORT_METHOD(disconnectCall){
 }
 
 - (NSDictionary *)callBody:(TVOCall *)call{
-    return @{@"from":call.from,@"to":call.to,@"sid":call.sid,@"mute":[NSNumber numberWithBool:call.isMuted],@"onhold":[NSNumber numberWithBool:call.isOnHold]};
+    return @{@"":@""};//@{@"from":call.from,@"to":call.to,@"sid":call.sid,@"mute":[NSNumber numberWithBool:call.isMuted],@"onhold":[NSNumber numberWithBool:call.isOnHold]};
 }
 
 #pragma mark - PKPushRegistryDelegate
@@ -298,8 +298,6 @@ withCompletionHandler:(void (^)(void))completion {
 - (void)callDisconnected {
     _call = nil;
     [self playDisconnectSound];
-    //UI
-    //Stop spin
 }
 
 #pragma mark - AVAudioSession
@@ -407,4 +405,4 @@ withCompletionHandler:(void (^)(void))completion {
 
 
 @end
-  
+
